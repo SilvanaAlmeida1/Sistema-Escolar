@@ -1,5 +1,4 @@
-# Sistema-Escolar
-Desenvolver um sistema de controle de alunos de uma escola. 
+Sistema de controle de alunos de uma escola.
 
 Estrutura do projeto
 arquivos de configuração
@@ -38,7 +37,9 @@ Implementar namespaces, modelagem de classes, etc;
 Métodos update só estão funcionando via url na barra de endereços - opção: um formulário para essas funcionalidades;
 Função para exibir a data que vem do banco no formato d-m-Y;
 Revisar os relacionamentos das tabelas do banco;
+
 Scripts SQL utilizados
+
 CREATE TABLE IF NOT EXISTS 'alunos' ( 'id' int(11) NOT NULL AUTO_INCREMENT, 'nome' varchar(255) NOT NULL, 'telefone' varchar(50) NOT NULL, 'email' varchar(50) NOT NULL, 'nascimento' datetime NOT NULL, 'genero' char(1) NOT NULL, PRIMARY KEY ('id') ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS 'escolas' ( 'id' int(11) NOT NULL AUTO_INCREMENT, 'nome' varchar(255) NOT NULL, 'endereco' varchar(50) NOT NULL, 'data' datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 'situacao' varchar(50) NOT NULL, PRIMARY KEY ('id') ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
@@ -49,4 +50,3 @@ ALTER TABLE 'turmas' ADD CONSTRAINT 'fk_escola' FOREIGN KEY ( 'escola' ) REFEREN
 
 INSERT INTO 'alunos' ('id', 'nome', 'telefone', 'email', 'nascimento', 'genero') VALUES (1, 'Pedro Soares', '(65)99500-1234','pedrosoares@phpescola.com', '1996-08-05', 'M'), (2, 'Luara Dias', '(65)99400-5678', 'luaradias@phpescola.com', '1998-05-28','F'), (3, 'Amanda Souza', '(65)99309-9012', 'amandasouza@phpescola.com', '1999-01-17','F'), (4, 'Adriano Alves', '(65)9961-3456','adrianoalvescba@phpescola.com', '1997-05-18','M'), (5, 'Simone Ferreira', '(65)99701-7890','ferreirasimone@phpescola.com', '1996-09-02','F'), (6, 'Carlos Vieira', '(65)99260-1234','carlopvieira@phpescola.com', '1998-06-25','M'), (7, 'Jorge Marques', '(65)9950-5678','jorgemarques@phpescola.com', '1997-11-13','M'), (8, 'Felipe Palhares', '(65)99786-9012','fpalhares@phpescola.com', '1997-03-15','M'), (9, 'Bruno Costa', '(65)99202-3456','brunocosta0@phpescola.com', '1998-08-04','M'), (10, 'Rafael Mendes', '(65)99200-7890','rafamendes55@phpescola.com', '1996-05-21','M'), (11, 'Juliana Lopes', '(65)99202-1234','julianalopes586@phpescola.com', '1996-12-19','F'), (12, 'Daniel Silva', '(65)99202-5678','danielsilva@phpescola.com', '1997-09-01','M');
 
-Obs.: foram utilizados nomes e dados fictícios para preencher o sql.
